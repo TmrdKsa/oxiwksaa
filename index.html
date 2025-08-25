@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<!-- saved from url=(0032)http://www.staggeringbeauty.com/ -->
-<html lang="en-US"><script id="allow-copy_script" src="chrome-extension://aefehdhdciieocakfobpaaolhipkcpgc/content_scripts/copy.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!doctype html>
+<html lang="en-US">
+<head>
 
 
-  <script type="text/javascript" src="./Staggering Beauty_files/paper.js.تنزيل"></script>
+  <script type="text/javascript" src="lib/paper.js"></script>
   <!--<script type="text/javascript" src="lib/dat.gui.min.js"></script>-->
-  <script type="text/javascript" src="./Staggering Beauty_files/Tween.js.تنزيل"></script>
-  <script type="text/javascript" src="./Staggering Beauty_files/traer.js.تنزيل"></script>
+  <script type="text/javascript" src="lib/Tween.js"></script>
+  <script type="text/javascript" src="lib/traer.js"></script>
   
-  <script type="text/javascript" src="./Staggering Beauty_files/jiggler.js.تنزيل"></script>
-  <script type="text/paperscript" src="./Staggering Beauty_files/main.js.تنزيل" canvas="canvas" id="http://www.staggeringbeauty.com/src/main.js?3" data-paper-loaded="true"></script>
+  <script type="text/javascript"  src="src/jiggler.js"></script>
+  <script type="text/paperscript" src="src/main.js?3" canvas="canvas"></script>
   
-  <link href="./Staggering Beauty_files/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="src/style.css?3" media="screen" rel="stylesheet" type="text/css" />
 
   <title>Staggering Beauty</title>
-  <meta name="title" content="Staggering Beauty">
-  
-  <meta name="Description" content="A website to remember.">
-  <meta name="viewport" content="initial-scale=0.7,user-scalable=no">
-  <meta name="google" content="notranslate">
-  <link rel="image_src" href="http://www.staggeringbeauty.com/assets/poster.png">
+  <meta name="title" content="Staggering Beauty" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="Description" content="A website to remember." />
+  <meta name="viewport" content="initial-scale=0.7,user-scalable=no" />
+  <meta name="google" content="notranslate" />
+  <link rel="image_src" href="assets/poster.png" />
 </head>
-<body class="">
+<body>
 
-  <canvas id="canvas" resize="" width="1136" height="920"></canvas>
-  <script async="" src="./Staggering Beauty_files/js"></script>
+  <canvas id="canvas" resize></canvas>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JD24F8WW84"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -36,25 +37,25 @@
     <!-- It's way better on a desktop. -->
   </div>
 
-  <div id="shake" style="display: none;">
+  <div id="shake">
     Shake vigorously
   </div>
 
   <div id="warning">
-    <span class="english">FLASHING IMAGES, LOUD NOISES</span><br>
+    <span class="english">FLASHING IMAGES, LOUD NOISES</span><br/>
     <span class="chinese">包含闪烁图像、大声噪音</span>
   </div>
 
   <div id="enquiries">
     <a target="_top" href="mailto:enquiries@staggeringbeauty.com">Enquiries</a>
-    <a id="embed-button" href="http://www.staggeringbeauty.com/#">Embed</a>
+    <a id="embed-button" href="#">Embed</a>
   </div>
 
   <div id="embed">
-    <textarea id="embed-text">&lt;iframe src="http://www.staggeringbeauty.com/" style="border: 1px inset #ddd" width="498" height="598"&gt;&lt;/iframe&gt;</textarea>
+    <textarea id="embed-text">&lt;iframe src=&quot;http://www.staggeringbeauty.com/&quot; style=&quot;border: 1px inset #ddd&quot; width=&quot;498&quot; height=&quot;598&quot;&gt;&lt;/iframe&gt;</textarea>
   </div>
 
-  <div id="splash" style="display: none;">
+  <div id="splash">
     <div id="splash-warning">
       <svg id="warning-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.146 192.146">
         <path d="M108.186,144.372c0,7.054-4.729,12.32-12.037,12.32h-0.254c-7.054,0-11.92-5.266-11.92-12.32
@@ -62,9 +63,9 @@
           L88.44,125.301z M190.372,177.034c-2.237,3.664-6.214,5.921-10.493,5.921H12.282c-4.426,0-8.51-2.384-10.698-6.233
           c-2.159-3.849-2.11-8.549,0.147-12.349l84.111-149.22c2.208-3.722,6.204-5.96,10.522-5.96h0.332
           c4.445,0.107,8.441,2.618,10.513,6.546l83.515,149.229C192.717,168.768,192.629,173.331,190.372,177.034z M179.879,170.634
-          L96.354,21.454L12.292,170.634H179.879z"></path>
+          L96.354,21.454L12.292,170.634H179.879z"/>
       </svg>
-      <span class="english">FLASHING IMAGES, LOUD NOISES</span><br>
+      <span class="english">FLASHING IMAGES, LOUD NOISES</span><br/>
       <span class="chinese">包含闪烁图像、大声噪音</span>
     </div>
     <div id="accept">
@@ -95,6 +96,5 @@ embedText.addEventListener('click', function(e) {
   return false;
 })
 </script>
-
-
-</body></html>
+</body>
+</html>
